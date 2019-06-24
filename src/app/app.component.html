@@ -1,22 +1,19 @@
-
 <div id="heading" class="jumbotron text-center bg-light">
-    <h1>0{{month + 1}}, {{year}}</h1>
-    <div class="container">
-      <div></div>
-    </div>
-    <button type="button" class="btn btn-primary btn-sm" (click)="monthNumber(-1)" >Prev Month</button>
-    <button type="button" class="btn btn-primary btn-sm"(click)="selectCurrentMonth()" >Current Month</button>
-    <button type="button" class="btn btn-primary btn-sm"(click)="monthNumber(1)" >Next Month</button>
-
-
+  <h1>{{month + 1 < 10 ? '0' : ''}}{{month + 1}}, {{year}}</h1>
+  <div class="container">
   </div>
+  <button type="button" class="btn btn-primary btn-sm" (click)="changeMonthNumber(-1)">Prev Month</button>
+  <button type="button" class="btn btn-primary btn-sm" (click)="selectCurrentMonth()">Current Month</button>
+  <button type="button" class="btn btn-primary btn-sm" (click)="changeMonthNumber(1)">Next Month</button>
+</div>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-8">
+    <div ></div>
+    <div class="col-sm-12">
       <table class="table table-dark table-striped">
         <thead>
-          <tr >
+          <tr>
             <th>Monday</th>
             <th>Tuesday</th>
             <th>Wednesday</th>
@@ -27,14 +24,15 @@
           </tr>
         </thead>
         <tbody>
-         <tr *ngFor="let i of days">
-            <td *ngFor="let j of i; let b = index" (click)="openPrompt(j.day); ">{{j.day || ""}}<br>{{j.event}}
+          <tr *ngFor="let i of days">
+            <td *ngFor="let j of i; let b = index" (click)="openPrompt(j.day); ">{{j.day || ""}}<br>
+              <em style="color: rgb(221, 255, 158)">{{j.event}}</em>
 
             </td>
           </tr>
         </tbody>
       </table>
-    </div> 
+    </div>
   </div>
 </div>
 
