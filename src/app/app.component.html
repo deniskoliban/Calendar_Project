@@ -1,7 +1,11 @@
 
 <div id="heading" class="jumbotron text-center bg-light">
-    <h1>{{title}}</h1>
+    <h1>0{{month + 1}}, {{year}}</h1>
+    <div class="container">
+      <div></div>
+    </div>
     <button type="button" class="btn btn-primary btn-sm" (click)="monthNumber(-1)" >Prev Month</button>
+    <button type="button" class="btn btn-primary btn-sm"(click)="selectCurrentMonth()" >Current Month</button>
     <button type="button" class="btn btn-primary btn-sm"(click)="monthNumber(1)" >Next Month</button>
 
 
